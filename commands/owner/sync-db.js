@@ -28,7 +28,7 @@ module.exports = {
             let guildsCounts = await message.client.shard.fetchClientValues("guilds.cache.size");
             let guildsCount = guildsCounts.reduce((p, count) => p + count);
             if (realized === guildsCount) {
-                message.channel.send("**__Test Done__**\nTest done succesfully on " + guildsCount + " guilds (Operation realized in **" + Date.now() - m.createdTimestamp + "** ms).\n\n**Results:**\nGood guilds: " + good + "\nGuilds missing (fixed): " + left + "\n__**Bot usage**__\n:flag_fr: French servers: **" + locales.fr + "**\n:flag_gb: English servers: **" + locales.en + "**\n:flag_de: German servers: **" * locales)
+                message.channel.send("**__Test Done__**\nTest done succesfully on " + guildsCount + " guilds (Operation realized in **" + m.createdTimestamp - Date.now() + "** ms).\n\n**Results:**\nGood guilds: " + good + "\nGuilds missing (fixed): " + left + "\n__**Bot usage**__\n:flag_fr: French servers: **" + locales.fr + "**\n:flag_gb: English servers: **" + locales.en + "**\n:flag_de: German servers: **" * locales)
             }
         });
 
